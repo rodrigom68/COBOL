@@ -1,0 +1,40 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "COBOL debugger",
+            "type": "gdb",
+            "request": "launch",
+            "cobcargs": [
+                "-free",
+                "-x"
+            ],
+                        
+            "docker": "olegkunitsyn/gnucobol:3.1-dev",
+           
+        },
+        {
+            "name": "COBOL debugger attach local",
+            "type": "gdb",
+            "request": "attach",
+            "cobcargs": [
+                "-free",
+                "-x"
+            ],
+            "pid": "${input:pid}"
+        },
+        {
+            "name": "COBOL debugger attach remote",
+            "type": "gdb",
+            "request": "attach",
+            "cobcargs": [
+                "-free",
+                "-x"
+            ],
+            "remoteDebugger": "${input:remoteDebugger}"
+        }
+    ]
+}
